@@ -1,0 +1,31 @@
+version: '3.4'
+ 
+networks:
+    myAppNetwork:
+    
+volumes:
+  sql-server-data:
+    name: sql-data
+ 
+services:
+    SqlServer:   
+        container_name: mssqlserverContainer
+        image: mcr.microsoft.com/mssql/server:2017-latest
+        ports:
+            - 1400:1433
+        environment:
+            - ACCEPT_EULA=Y
+            - SA_PASSWORD=PasswordSa1
+        volumes:
+            - sql-server-data:/var/opt/mssql
+    
+    webapiapp:
+        container_name: WebApiContainer
+        image: ${DOCKER_REGISTRY-}webapiapp
+        ports:
+            - 8000:8000            
+        build:
+          context: .
+          dockerfile: WebApiApp/Dockerfile
+        depends_on:
+            - SqlServer
