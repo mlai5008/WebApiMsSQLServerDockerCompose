@@ -1,0 +1,88 @@
+{
+	"info": {
+		"_postman_id": "ec497417-151c-4a63-be6d-b48a6253170b",
+		"name": "WebApiMsSQLServerDockerCompose",
+		"schema": "https://schema.getpostman.com/json/collection/v2.0.0/collection.json",
+		"_exporter_id": "16612653"
+	},
+	"item": [
+		{
+			"name": "GetAll",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": "{{host}}"
+			},
+			"response": []
+		},
+		{
+			"name": "Get by Id",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": "{{host}}7bc1bd29-51fe-4508-a434-9eaeedd62db7"
+			},
+			"response": []
+		},
+		{
+			"name": "Search",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{host}}Search?isBefore=true&date=2022-01-12",
+					"host": [
+						"{{host}}Search"
+					],
+					"query": [
+						{
+							"key": "isBefore",
+							"value": "true"
+						},
+						{
+							"key": "date",
+							"value": "2022-01-12"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "New Patient",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"id\": \"73C3C66C-A8E4-480C-B642-A9F3837F922C\",\r\n  \"use\": \"New\",\r\n  \"family\": \"Anderson\",\r\n  \"gender\": \"Male\",\r\n  \"birthDate\": \"2020-02-22\",\r\n  \"active\": true\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": "{{host}}"
+			},
+			"response": []
+		},
+		{
+			"name": "Change Patient",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"url": "{{host}}73C3C66C-A8E4-480C-B642-A9F3837F922C"
+			},
+			"response": []
+		},
+		{
+			"name": "Delete Patient",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"url": "{{host}}73C3C66C-A8E4-480C-B642-A9F3837F922C"
+			},
+			"response": []
+		}
+	]
+}
