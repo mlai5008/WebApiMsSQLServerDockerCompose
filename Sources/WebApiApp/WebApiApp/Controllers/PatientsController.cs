@@ -27,7 +27,7 @@ namespace WebApiApp.Controllers
             return await _context.Patient.ToListAsync();
         }
 
-        // GET: api/Patients/5
+        // GET: api/Patients/73C3C66C-A8E4-480C-B642-A9F3837F922C
         [HttpGet("{id}")]
         public async Task<ActionResult<Patient>> GetPatient(Guid id)
         {
@@ -82,7 +82,7 @@ namespace WebApiApp.Controllers
         }
 
 
-        // PUT: api/Patients/5
+        // PUT: api/Patients/73C3C66C-A8E4-480C-B642-A9F3837F922C
         // To protect from overposting attacks, see https://go.microsoft.com/fwlink/?linkid=2123754
         [HttpPut("{id}")]
         public async Task<IActionResult> PutPatient(Guid id, Patient patient)
